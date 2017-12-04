@@ -45,6 +45,15 @@ open class MessagesViewController: UIViewController {
     ///
     /// The default value of this property is `false`.
     open var scrollsToBottomOnKeybordBeginsEditing: Bool = false
+    
+    /// A Boolean value that determines whether to display the typing indicator
+    ///
+    /// The default value of this property is `false`.
+    open var showTypingIndicator: Bool = false {
+        didSet {
+            messagesCollectionView.collectionViewLayout.invalidateLayout()
+        }
+    }
 
     open override var canBecomeFirstResponder: Bool {
         return true
@@ -122,6 +131,7 @@ open class MessagesViewController: UIViewController {
         messagesCollectionView.register(MessageHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader)
         messagesCollectionView.register(MessageDateHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader)
 
+        messagesCollectionView.register(TypingIndicatorFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter)
     }
 
     /// Adds the messagesCollectionView to the controllers root view.
@@ -261,7 +271,9 @@ extension MessagesViewController: UICollectionViewDataSource {
         case UICollectionElementKindSectionHeader:
             return displayDelegate.messageHeaderView(for: message, at: indexPath, in: messagesCollectionView)
         case UICollectionElementKindSectionFooter:
-            return displayDelegate.messageFooterView(for: message, at: indexPath, in: messagesCollectionView)
+            return showTypingIndicator == true && messagesCollectionView.indexPathForLastItem == indexPath
+                ? displayDelegate.typingIndicatorFooterView(for: message, at: indexPath, in: messagesCollectionView)
+                : displayDelegate.messageFooterView(for: message, at: indexPath, in: messagesCollectionView)
         default:
             fatalError("Unrecognized element of kind: \(kind)")
         }

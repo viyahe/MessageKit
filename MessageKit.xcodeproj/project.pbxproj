@@ -10,6 +10,8 @@
 		1F82D1431FB1B75B00B81A88 /* AvatarPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F82D1421FB1B75B00B81A88 /* AvatarPosition.swift */; };
 		38C57C791F9AE3E50043CC03 /* SeparatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57C781F9AE3E50043CC03 /* SeparatorLine.swift */; };
 		38C57C7C1F9AE4890043CC03 /* InputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57C7B1F9AE4870043CC03 /* InputStackView.swift */; };
+		859C0CA21FD573080075377D /* TypingIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C0CA11FD573080075377D /* TypingIndicatorFooterView.swift */; };
+		859C0CA41FD58EE50075377D /* TypingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C0CA31FD58EE50075377D /* TypingIndicatorView.swift */; };
 		88916B2D1CF0DF2F00469F91 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88916B221CF0DF2F00469F91 /* MessageKit.framework */; };
 		8962AC8A1F87AB7D0030B058 /* MessagesCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AC831F87AB230030B058 /* MessagesCollectionViewTests.swift */; };
 		8962AC8B1F87AB7D0030B058 /* InputBarItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AC841F87AB230030B058 /* InputBarItemTests.swift */; };
@@ -87,6 +89,8 @@
 		1F82D1421FB1B75B00B81A88 /* AvatarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPosition.swift; sourceTree = "<group>"; };
 		38C57C781F9AE3E50043CC03 /* SeparatorLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorLine.swift; sourceTree = "<group>"; };
 		38C57C7B1F9AE4870043CC03 /* InputStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStackView.swift; sourceTree = "<group>"; };
+		859C0CA11FD573080075377D /* TypingIndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicatorFooterView.swift; sourceTree = "<group>"; };
+		859C0CA31FD58EE50075377D /* TypingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicatorView.swift; sourceTree = "<group>"; };
 		88916B221CF0DF2F00469F91 /* MessageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MessageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88916B2C1CF0DF2F00469F91 /* MessageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8962AC741F87AB230030B058 /* MessageKitDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitDateFormatterTests.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				B7A03F301F866940006AEF79 /* MessageDateHeaderView.swift */,
 				B7A03F311F866940006AEF79 /* MessageFooterView.swift */,
 				B7A03F321F866940006AEF79 /* MessageHeaderView.swift */,
+				859C0CA11FD573080075377D /* TypingIndicatorFooterView.swift */,
 			);
 			path = "Headers & Footers";
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				B7A03F451F86694F006AEF79 /* MessagesCollectionView.swift */,
 				B7A03F441F86694F006AEF79 /* PlayButtonView.swift */,
 				38C57C781F9AE3E50043CC03 /* SeparatorLine.swift */,
+				859C0CA31FD58EE50075377D /* TypingIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -537,6 +543,7 @@
 				B006FA021F99DE2100509C46 /* MessageIntermediateLayoutAttributes.swift in Sources */,
 				B7A03F4B1F86694F006AEF79 /* MessageContainerView.swift in Sources */,
 				B7A03F281F866895006AEF79 /* LocationMessageSnapshotOptions.swift in Sources */,
+				859C0CA21FD573080075377D /* TypingIndicatorFooterView.swift in Sources */,
 				B7A03F481F86694F006AEF79 /* InputTextView.swift in Sources */,
 				B7A03F6C1F8669EB006AEF79 /* UIView+Extensions.swift in Sources */,
 				B7A03F3A1F866946006AEF79 /* TextMessageCell.swift in Sources */,
@@ -571,6 +578,7 @@
 				B7A03F2D1F866895006AEF79 /* LabelAlignment.swift in Sources */,
 				38C57C791F9AE3E50043CC03 /* SeparatorLine.swift in Sources */,
 				B7A03F2C1F866895006AEF79 /* DetectorType.swift in Sources */,
+				859C0CA41FD58EE50075377D /* TypingIndicatorView.swift in Sources */,
 				B7A03F271F866895006AEF79 /* Avatar.swift in Sources */,
 				1F82D1431FB1B75B00B81A88 /* AvatarPosition.swift in Sources */,
 			);

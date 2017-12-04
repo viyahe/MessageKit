@@ -38,7 +38,7 @@ open class MessagesCollectionView: UICollectionView {
 
     open var showsDateHeaderAfterTimeInterval: TimeInterval = 3600
 
-    private var indexPathForLastItem: IndexPath? {
+    open var indexPathForLastItem: IndexPath? {
 
         let lastSection = numberOfSections > 0 ? numberOfSections - 1 : 0
         guard lastSection > 0, numberOfItems(inSection: lastSection) > 0 else { return nil }

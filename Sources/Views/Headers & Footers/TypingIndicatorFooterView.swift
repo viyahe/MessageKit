@@ -24,17 +24,41 @@
 
 import UIKit
 
-open class MessageHeaderView: UICollectionReusableView, CollectionViewReusable {
-    open class func reuseIdentifier() -> String { return "messagekit.header.base" }
-
+open class TypingIndicatorFooterView: UICollectionReusableView, CollectionViewReusable {
+    open class func reuseIdentifier() -> String { return "messagekit.footer.typing" }
+    
+    // MARK: - Properties
+    
+    open var messageContainerView: MessageContainerView = {
+        let messageContainerView = MessageContainerView()
+        messageContainerView.clipsToBounds = true
+        messageContainerView.layer.masksToBounds = true
+        return messageContainerView
+    }()
+    
+    private var typingIndicatorView: TypingIndicatorView!
+    
     // MARK: - Initializers
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        typingIndicatorView = TypingIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 64.0, height: 35.0))
+        typingIndicatorView.animated = true
+        
+        messageContainerView.frame = CGRect(x: 12.0, y: 0.0, width: 64.0, height: 35.0)
+        messageContainerView.addSubview(typingIndicatorView)
+        
+        addSubview(messageContainerView)
     }
-
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    open func configure(for messageStyle: MessageStyle) {
+        messageContainerView.style = messageStyle
+        messageContainerView.backgroundColor = .white
+    }
+    
 }

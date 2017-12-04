@@ -214,7 +214,7 @@ public extension MessagesLayoutDelegate {
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return CGSize(width: 30, height: 30)
     }
-    
+
     func avatarPosition(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> AvatarPosition {
         return AvatarPosition(horizontal: .natural, vertical: .messageBottom)
     }

@@ -156,6 +156,10 @@ public extension MessagesDisplayDelegate {
         return .bubble
     }
 
+    func messageStyleForTypingIndicator() -> MessageStyle {
+        return .bubble
+    }
+
     func backgroundColor(for message: MessageType, at  indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
 
         switch message.data {
@@ -166,7 +170,7 @@ public extension MessagesDisplayDelegate {
             return dataSource.isFromCurrentSender(message: message) ? .outgoingGreen : .incomingGray
         }
     }
-    
+
     func messageHeaderView(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageHeaderView {
         let header = messagesCollectionView.dequeueReusableHeaderView(MessageDateHeaderView.self, for: indexPath)
         header.dateLabel.text = MessageKitDateFormatter.shared.string(from: message.sentDate)
@@ -210,6 +214,17 @@ public extension MessagesDisplayDelegate {
 
     func animationBlockForLocation(message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> ((UIImageView) -> Void)? {
         return nil
+    }
+
+    // MARK - Typing Indicator Defaults
+    func typingIndicatorFooterView(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> TypingIndicatorFooterView {
+        let typingIndicatorFooterView = messagesCollectionView.dequeueReusableFooterView(TypingIndicatorFooterView.self, for: indexPath)
+        if let displayDelegate = messagesCollectionView.messagesDisplayDelegate {
+            typingIndicatorFooterView.configure(for: displayDelegate.messageStyleForTypingIndicator())
+        } else {
+            typingIndicatorFooterView.configure(for: .bubble)
+        }
+        return typingIndicatorFooterView
     }
 
 }
